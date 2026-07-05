@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gamedev & Vlogs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Your Studio</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#games">Games</a>
+      <a href="#articles">Articles</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Worlds, Code, and Stories.</h1>
+        <p>I make games and share the journey through devlogs and vlogs.</p>
+        <div class="hero-buttons">
+          <a href="#games" class="btn primary">View Games</a>
+          <a href="#articles" class="btn secondary">Latest Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE CAROUSEL (LATEST ARTICLES) -->
+    <section class="carousel-section">
+      <h2>Latest Articles</h2>
+      <div id="article-carousel" class="carousel">
+        <!-- JS will inject latest articles here from articles.json -->
+      </div>
+    </section>
+
+    <!-- GAMES GRID -->
+    <section id="games" class="games-section">
+      <h2>Games</h2>
+      <div id="games-grid" class="games-grid">
+        <!-- JS will inject games here from games.json -->
+      </div>
+    </section>
+
+    <!-- ARTICLES LIST -->
+    <section id="articles" class="articles-section">
+      <h2>All Articles</h2>
+      <div id="articles-list" class="articles-list">
+        <!-- JS will inject full article list here from articles.json -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <h2>About</h2>
+      <p>
+        I’m an indie gamedev who builds atmospheric worlds and documents the process
+        through devlogs and vlogs. This site is my hub for games and stories.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Your Studio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
