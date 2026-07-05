@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Echoes of the Machine",
+    "description": "A narrative puzzle game about forgotten robots and fading memories.",
+    "genre": "Puzzle Adventure",
+    "status": "Released",
+    "thumbnail": "images/game1.jpg",
+    "url": "games/echoes-of-the-machine.html"
+  },
+  {
+    "id": 2,
+    "title": "Forest of Signals",
+    "description": "Explore a haunted forest where every tree is a transmitter.",
+    "genre": "Exploration",
+    "status": "In Development",
+    "thumbnail": "images/game2.jpg",
+    "url": "games/forest-of-signals.html"
+  },
+  {
+    "id": 3,
+    "title": "Tiny Orbit",
+    "description": "A small arcade game about keeping a fragile planet in balance.",
+    "genre": "Arcade",
+    "status": "Prototype",
+    "thumbnail": "images/game3.jpg",
+    "url": "games/tiny-orbit.html"
+  }
+]
