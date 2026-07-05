@@ -77,7 +77,7 @@ section h2 { margin-bottom: 1.5rem; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-}
+} 
 
 .game-card {
   background: #071821;
