@@ -1,79 +1,116 @@
-// Load JSON data and populate the site
-document.addEventListener("DOMContentLoaded", () => {
-  loadArticles();
-  loadGames();
-});
+* { box-sizing: border-box; }
 
-async function loadArticles() {
-  try {
-    const res = await fetch("articles.json");
-    const articles = await res.json();
-
-    // LATEST ARTICLES CAROUSEL (e.g. first 5)
-    const carousel = document.getElementById("article-carousel");
-    const latest = articles.slice(0, 5); // adjust how many you want
-
-    latest.forEach(article => {
-      const item = document.createElement("div");
-      item.className = "carousel-item";
-
-      item.innerHTML = `
-        <img src="${article.thumbnail}" alt="${article.title}">
-        <h3>${article.title}</h3>
-        <p>${article.excerpt}</p>
-        <div class="meta">${article.date} · ${article.category}</div>
-      `;
-
-      carousel.appendChild(item);
-    });
-
-    // FULL ARTICLES LIST
-    const list = document.getElementById("articles-list");
-
-    articles.forEach(article => {
-      const item = document.createElement("div");
-      item.className = "article-item";
-
-      item.innerHTML = `
-        <h3>${article.title}</h3>
-        <div class="meta">${article.date} · ${article.category}</div>
-        <p>${article.excerpt}</p>
-      `;
-
-      list.appendChild(item);
-    });
-
-    // HERE YOU CAN ADD MORE BEHAVIOR, LIKE CLICK TO OPEN FULL ARTICLE PAGE
-    // e.g. item.addEventListener("click", () => { window.location.href = article.url; });
-  } catch (err) {
-    console.error("Error loading articles.json", err);
-  }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b0f14;
+  color: #f5f5f5;
 }
 
-async function loadGames() {
-  try {
-    const res = await fetch("games.json");
-    const games = await res.json();
+a { color: inherit; text-decoration: none; }
 
-    const grid = document.getElementById("games-grid");
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+}
 
-    games.forEach(game => {
-      const card = document.createElement("div");
-      card.className = "game-card";
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
 
-      card.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}">
-        <h3>${game.title}</h3>
-        <p>${game.description}</p>
-        <div class="tags">${game.genre} · ${game.status}</div>
-      `;
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  animation: fade 1s ease-in-out;
+}
 
-      grid.appendChild(card);
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-      // HERE YOU CAN ADD CLICK HANDLERS TO GO TO GAME PAGE
-      // card.addEventListener("click", () => { window.location.href = game.url; });
-    });
-  } catch (err) {
-    console.error("Error loading games.json", err);
-  }
+.hero-overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  max-width: 500px;
+}
+
+/* SECTIONS */
+section { padding: 3rem 2.5rem; }
+section h2 { margin-bottom: 1.5rem; }
+
+/* CAROUSEL */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+}
+
+.carousel-item {
+  min-width: 280px;
+  background: #0f1820;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+/* GAMES GRID */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  background: #071821;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+/* ARTICLES LIST */
+.article-item {
+  background: #0f1820;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+/* DETAIL PAGE */
+.detail-page {
+  padding: 3rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f4a259;
+  color: #020b10;
+  border-radius: 8px;
 }
