@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Devlog #1 – Building the Core Loop",
+    "excerpt": "In this post I walk through the first playable prototype and how the core loop evolved.",
+    "date": "2026-07-01",
+    "category": "Devlog",
+    "thumbnail": "images/devlog1.jpg",
+    "url": "articles/devlog-1.html"
+  },
+  {
+    "id": 2,
+    "title": "Vlog – A Day in My Indie Life",
+    "excerpt": "I recorded a full day of work: design, code, and coffee breaks.",
+    "date": "2026-07-03",
+    "category": "Vlog",
+    "thumbnail": "images/vlog1.jpg",
+    "url": "https://youtube.com/your-video"
+  },
+  {
+    "id": 3,
+    "title": "Announcement – New Puzzle Adventure",
+    "excerpt": "I’m excited to reveal my next project, a surreal puzzle adventure set in a forgotten city.",
+    "date": "2026-07-05",
+    "category": "Announcement",
+    "thumbnail": "images/announcement1.jpg",
+    "url": "articles/new-puzzle-adventure.html"
+  }
+]
